@@ -1,0 +1,38 @@
+{{#if error }}
+<div id="error" class="animated fadeInDown alert alert-danger alert-dismissible fade show" role="alert">
+    {{error}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<script>
+    let error = document.querySelector('#error');
+    setTimeout(()=>{
+        error.classList.replace('fadeInDown','fadeOutUp');
+    },3000)
+    setTimeout(()=>{
+                if(error.classList.contains('fadeOutUp')){
+            error.classList.add('d-none')
+        }
+    },3500); 
+</script>
+{{/if}}
+{{#each errors }}
+<div id="errorsMsg" class="animated fadeInDown alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<script>
+    let error = document.querySelector('#errorsMsg');
+    setTimeout(()=>{
+        error.classList.replace('fadeInDown','fadeOutUp');
+    },3000)
+    setTimeout(()=>{
+                if(error.classList.contains('fadeOutUp')){
+            error.classList.add('d-none')
+        }
+    },3500); 
+</script>
+{{/each}}

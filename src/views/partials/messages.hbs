@@ -1,0 +1,42 @@
+{{#if success_msg}}
+<div class="position-relative w-50 mx-auto">
+    <div id="successMsg" class="animated fadeInDown alert alert-success alert-dismissible fade show position-absolute " role="alert">
+    {{success_msg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+</div>
+<script>
+    let successMsg = document.querySelector('#successMsg');
+    setTimeout(()=>{
+        successMsg.classList.replace('fadeInDown','fadeOutUp');
+    },3000)
+    setTimeout(()=>{
+                if(successMsg.classList.contains('fadeOutUp')){
+            successMsg.classList.add('d-none')
+        }
+    },3500); 
+</script>
+{{/if}}
+{{#if error_msg}}
+<div class="position-relative w-50 mx-auto">
+    <div id="errorMsg" class="animated fadeInDown alert alert-danger alert-dismissible fade show position-absolute " role="alert">
+    {{error_msg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+</div>
+<script>
+    let errorMsg = document.querySelector('#errorMsg');
+    setTimeout(()=>{
+        errorMsg.classList.replace('fadeInDown','fadeOutUp');
+    },3000)
+    setTimeout(()=>{
+                if(errorMsg.classList.contains('fadeOutUp')){
+            errorMsg.classList.add('d-none')
+        }
+    },3500); 
+</script>
+{{/if}}
